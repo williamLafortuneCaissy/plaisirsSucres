@@ -1,0 +1,59 @@
+// Definit de quoi auront l'air les modules ou les layouts dans un etat particulier (cache, grossi, actif, inactif, verrouille, glisse, sur la page principale, mobile...)
+// Les etats sont des classes qu'on additionnent aux modules ou aux layouts et dont le nom debute souvent par "is-" (ex: is-locked, is-dragged, is-active).
+// Les etats alterent ne definissent pas completement le visuel d'un module/layout, il ne font que l'alterer (ecraser et/ou ajouter des proprietes)
+// Il peut etre possible d'y utiliser !important si necessaire. Soyez parcimonieux.
+a:hover{
+    color: black;
+}
+.categorie.is-active{
+    background-color: #aaa;
+    
+    ul{
+        display: block !important;
+        
+        li{
+            border-top: #666 solid 1px !important;
+            
+            &:last-child{
+                border-bottom: none !important;
+            }
+            a{
+                color: black;
+            }
+        }
+        .sous-categorie.is-active{
+            background-color: #666;
+            
+            a{
+                color: white;
+            }
+        }
+    }
+    
+}
+.is-masked{
+    transform: translate(-100vw) !important;
+    transition: 0.5s !important;
+    
+    @include mq(medium){
+        transform: translate(0vw) !important;
+        transition: 0s !important;
+    }
+}
+.bt-commande:hover,.ariane>p>*:hover{
+    text-decoration: none;
+    color: white;
+}
+.bouton:hover{
+    text-decoration: none;
+    transition: 0.5s;
+    
+    &.blanc{
+        background-color: white;
+        color: black;
+    }
+    &.noir{
+        background-color: black;
+        color: white !important;
+    }
+}

@@ -1,0 +1,14 @@
+//On definit ici le style par defaut des balises presentes sur le site, peu importe ou elles se trouvent (le style pourrait etre ecrase par la suite).
+// N'implique habituellement que des selecteurs de balise et des selecteurs d'attribut. Ne pas utiliser de classe ni de !important.
+@import "reset";
+
+*{
+    box-sizing: border-box;
+    color: black;
+}
+
+//body{
+//    @include mq(large){
+//        color:red;
+//    }
+//}

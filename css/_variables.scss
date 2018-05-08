@@ -1,0 +1,21 @@
+//On declare ici les variables en les separant en categories (couleurs, polices, tailles, media queries...)
+
+//tailles
+$baseSize:16;
+
+//MediaQueries
+//Modifier les valeurs en fonction du design du site
+$breakpoints:(
+    'small':(768/$baseSize)*1em,
+    'medium':(992/$baseSize)*1em,
+);
+
+$brun: #512c16;
+$rose: #ee9da7;
+$rosePale: #f1b5bc;
+$bleu: #8ac3d3;
+$brun: #512c16;
+$txtSize: 24px;
+$sTitreSizeMd: 52px;
+$sTitreSizeXs: 42px;
+$bgMenu: #ccc;

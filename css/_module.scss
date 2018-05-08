@@ -1,0 +1,707 @@
+// "Layouts change. Components are fluid".
+// Parties reutilisables du design. C'est la chair du site. (sections dans une sidebar, navigation, liste de produits, produits, callout)
+// Chaque module doit etre pense pour exister independamment pour conserver la flexibilite de la page. 
+// Les modules pourraient normalement etre deplaces dans le site ou vers un autre site sans se casser. 
+// On doit donc resister a la tentation d'utiliser des selecteurs d'element s'ils ne sont pas semantiques (span, div) en ajoutant plutot des classes communes.
+// Utiliser les selecteurs enfant (>) le plus possible, mais en respectant la loi d'Inception.
+.sous-titre{
+    font-family: "Marck Script";
+    font-size: $sTitreSizeXs;
+    
+    @include mq(medium){
+        font-size: $sTitreSizeMd;
+    }
+}
+.bouton{
+    display: inline-block;
+    font-size: 24px;
+    padding: 0.5em 1.5em;
+    border-style: solid;
+    border-width: 2px; 
+    transition: 0.5s;
+}
+.bt-commande{
+    border-radius: 10px;
+    display: inline-block;
+    background-color: $brun;
+    color: white;
+    font-size: $txtSize;
+    padding: 0.5em;
+}
+
+body{
+    font-family: "CantataOne-Regular";
+    max-width: 1200px;
+    
+    header{
+        position: relative;
+        
+        .titre{
+            background-color: $rose;
+            padding: 36px 0;
+
+            &::before{
+                content: url(../img/logo.svg);
+                width: 150px;
+                margin: 0 auto;
+
+                @include mq(medium){
+                    display: none;
+                }
+            }
+
+            h1{
+                display: none;
+
+                @include mq(medium){
+                    display: inline-block;
+                    font-size: 72px;
+                    font-family: "Marck Script";
+                    color: black;
+                    text-align: justify;
+                }
+            }
+            .bt-commande{
+                display: none;
+                
+                @include mq(medium){
+                    display: inline-block;
+                }
+            }
+            p{
+                display: none;
+
+                @include mq(medium){
+                    display: block;
+                    font-size: $txtSize;
+                    padding: 0.5em 0;
+
+                    a{
+                        color: black;
+                    }
+                }
+            }
+        }
+        .nav-wrapper{
+            
+            .burger{
+                color: black;
+                position: fixed;
+                top: 0;
+                right: 0;
+                font-size: 30px;
+                padding: 1em;
+                text-decoration: none;
+                z-index: 9;
+                
+                @include mq(small){
+                    font-size: 50px;
+                }
+                @include mq(medium){
+                    display: none;
+                }
+            }
+            .nav-mask{
+                width: 75%;
+                height: 100%;
+                background-color: $bgMenu;
+                position: fixed;
+                top: 0;
+                left: 0;
+                transform: translate(0vw);
+                transition: 0.5s;
+                z-index: 9;
+                
+                @include mq(medium){
+                    width: 100%;
+                    height: inherit;
+                    position: inherit;
+                    background-color: white;
+                }
+                .nav-principal{  
+                    
+                    @include mq(medium){
+                        padding-top: 15px;
+                        padding-bottom: 15px;
+                    }
+                    .logo{
+                        text-align: justify;
+
+                        img{
+                            height: 105px;
+                        }
+                    }
+                    ul{
+                        padding-top: 0.25em;
+
+                        li{
+                            margin-left: 15px;
+                            margin-right: 15px;
+                            padding-top: 0.5em;
+                            padding-bottom: 0.5em;
+                            border-top: #666 solid 3px;
+                            
+                            &:last-child{
+                                border-bottom: #666 solid 3px;
+                                
+                                @include mq(medium){
+                                    border-bottom: none;
+                                }
+                            }
+                            
+                            @include mq(medium){
+                                border: none;
+                                margin-left: 0;
+                                margin-right: 0;
+                            }
+                            img{
+                                display: none;   
+
+                                @include mq(medium){
+                                    display: block;
+                                    margin: 0 auto;
+                                    height: 50px;
+                                }
+                            }
+                            .ico-small{
+                                padding-top: 10px;
+                                padding-bottom: 10px;
+                            }                        
+                            p{
+                                font-size: $txtSize;
+                                color: black;
+                                    
+                                @include mq(medium){
+                                    padding-top: 0.5em;
+                                }
+                            }
+                            ul{
+                                display: none;
+                            }
+                        }
+                    }
+                }
+                .nosCours{
+                    padding: 0;
+                    
+                    @include mq(medium){
+                        display: none;
+                    }
+                    a{
+                        font-size: $txtSize;
+                        color: black;
+                        padding-top: 10px;
+                        padding-bottom: 10px;
+                        display: block;
+                        border-bottom: #666 solid 3px;
+                    }
+                }
+                .langue{
+                    margin-top: 10px;
+                    margin-bottom: 10px;
+                    
+                    a{
+                        color: black;
+                    }
+                    @include mq(medium){
+                        display: none;
+                    }
+                }
+                .bt-commande{
+                    @include mq(medium){
+                        display: none;
+                    }
+                }
+            }
+        }
+        .nav-secondaire{
+            display: none;
+            
+            @include mq(medium){
+                display: block;
+                padding: 1em 0;
+                background-color: $bleu;
+
+                h2{
+                    text-align: justify; 
+                    font-size: 0.65*$sTitreSizeMd;
+                    padding-top: 0.25em;
+                }
+                nav{
+
+                    ul{
+
+                        li{
+
+                            a{
+                                font-size: $txtSize;
+                                color: black;
+
+                                span{
+                                    display: block;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .main-accueil{
+
+        .commande{
+            display: none;
+
+            @include mq(small){
+                padding-top: 100px;
+                padding-bottom: 100px;
+                display: block;
+                background-image: url(../img/commande_express.jpg);
+                background-position: center;
+
+                h2{
+                    color: white;
+                }
+                div{
+                    text-align: center;
+                    margin-top: 100px;
+
+                    a{
+                        color: white;
+                        border-color: white;
+                    }
+                }
+            }
+        }
+        .promotion{
+            padding-top: 50px;
+            padding-bottom: 60px;
+            border-bottom: grey solid 1px;
+            
+            @include mq(small){
+                width: 768px;
+                border-bottom: none;
+            }
+            @include mq(medium){
+                width: 992px;
+            }
+            
+            .row{
+
+                h2{
+                    @include mq(medium){
+                        margin-bottom: 25px;
+                    }
+                }
+                img{
+                    display: none;
+
+                    @include mq(medium){
+                        display: block;
+                        height: 100%;
+                    }
+                }
+
+                .block{
+                    margin-top: 25px;
+                    padding-top: 35px;
+                    padding-bottom: 35px;
+                    height: 100%;
+                    background-color: $rose;
+                    text-align: center;
+                    position: relative;
+
+                    @include mq(medium){
+                        margin-top: 0;
+                    }
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        top: -5px;
+                        left: -5px; 
+                        right: -5px;
+                        bottom: -5px;
+                        border: 2px solid $rose;
+                    }
+
+                    .obtenez{
+                        font-size: $txtSize;
+
+                        &::after{
+                            content: "--------";
+                            color: $rose;
+                            position: relative;
+                            left: 10px;
+                            bottom: 12px;
+                            border-bottom: 1px solid black;
+                        }
+                        &::before{
+                            content: "--------";
+                            color: $rose;
+                            position: relative;
+                            right: 10px;
+                            bottom: 12px;
+                            border-bottom: 1px solid black;
+                        }
+
+                    }
+                    .rabais{
+                        font-size: 100px;
+                        display: block;
+                        padding: 12px 0;
+                    }
+                    p:last-child{
+                        font-size: $txtSize;
+                    }
+                }
+            }
+        }
+        .quoiDeNeuf{
+            .row{
+
+                @include mq(small){
+                    background-image: url(../img/img_quoi_de_neuf.jpg);
+                    background-position: center;
+                }
+                div{
+                    margin-top: 50px;
+                    margin-bottom: 50px;
+                    background-color: white;
+                    position: relative;
+
+                    @include mq(small){
+                        margin-top: 90px;
+                        margin-bottom: 90px;
+                        padding-top: 50px;
+                        padding-bottom: 50px;
+                        width: 400px;
+
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            top: -5px;
+                            left: -5px; 
+                            right: -5px;
+                            bottom: -5px;
+                            border: 2px solid white;    
+                        }
+                    }
+
+                    h2{
+                        font-size: $sTitreSizeXs;
+                    }
+                    p{
+                        margin-top: 1em;
+                        font-size: 0.75*$txtSize;
+                        text-align: justify;
+
+                        @include mq(small){
+                            padding: 0 2.8em;
+                        }
+                    }
+                }
+            }
+        }
+        .row.besoinDideeRecette{
+            background-image: url(../img/sakura.png);
+            background-position: center;
+            padding-top: 50px;
+            padding-bottom: 50px;
+
+            h2{
+                color: black;
+                margin: 50px;
+                margin-top: 0;
+            }
+            img{
+                border-radius: 200px 200px 200px 200px;
+                -moz-border-radius: 200px 200px 200px 200px;
+                -webkit-border-radius: 200px 200px 200px 200px;
+            }
+            div{
+                margin-top: 50px;
+                text-align: center;
+                a{
+                    color: black;
+                    border-color: black;
+                }   
+            }
+        }
+    }
+    .titre-cupcakes{
+        text-align: center;
+        background-color: $rosePale;
+        
+        @include mq(small){
+            background-image: url(../img/titre_cupcake.jpg);
+            background-position: center;
+        }
+        h1{
+            padding: 1em;
+            margin-bottom: 200px;
+        }
+    } 
+    .ariane{
+        display: none;
+        
+        @include mq(medium){
+            display: block;
+            background-color: $brun;
+
+            *{
+                color: white;
+            } 
+            p{
+                padding: 0.75em;
+                font-size: $txtSize;
+            }
+        }
+    }
+    .sous-menu{
+        display: none;
+        
+        @include mq(medium){
+            display: block;
+            background-color: $bleu;
+
+            nav{
+                margin-top: 100px;
+                margin-bottom: 100px;
+                background-color: white;
+                border: solid 2px black;
+                padding: 1em;
+                font-size: $txtSize;
+                line-height: 1.5;
+
+                *{
+                    color: black;
+                }
+                li.actif{
+                    color: grey;
+                }
+            }
+        }
+        h2{
+            margin-top: 100px;
+            text-align: justify;
+        }
+    }
+    .main-cupcakes{
+
+        .row:first-child{
+            margin-top: 50px;
+        }
+        .row:last-child{
+            margin-bottom: 75px;
+        }
+        @include mq(medium){
+            .row:first-child{
+                margin-top: 150px;
+            }
+            .row{
+                margin-bottom: 100px;
+            }
+            .row:last-child{
+                margin-bottom: 200px;
+            }
+        }
+        .unCupcake{
+            padding-top: 50px;
+        
+            @include mq(medium){
+                padding-top: none;
+            }
+            p{
+                font-size: $txtSize;
+                text-align: center;
+                padding-top: 1em;
+
+                a{
+                    color: black;
+                }
+            }
+            img{
+                width: 100%;
+            }
+        }
+    }
+    .main-chocoNoisette{
+
+        h2{
+            font-size: 0.8*$sTitreSizeXs;
+            padding: 1em;
+            font-family: "CantataOne-Regular";
+                
+            @include mq(medium){
+                font-size: $sTitreSizeMd;
+            }
+        }
+        .allergie{
+            text-align: center;
+            background-color: $bleu;
+            border-radius: 10px 10px 10px 10px;
+            -moz-border-radius: 10px 10px 10px 10px;
+            -webkit-border-radius: 10px 10px 10px 10px;
+            border: 2px solid black;
+            font-size: 0.75*$txtSize;
+            padding: 1em 0;
+
+            p{
+
+                span{
+                    font-size: 1.25*$txtSize;
+                    font-weight: bold;
+                    display: block;
+                    padding-bottom: 0.25em;
+
+                    img{
+                        height: 1em;
+                    }
+                }
+            }
+        }
+        .contenu{
+            margin-top: 50px;
+            margin-bottom: 75px;
+            position: relative;
+            
+            @include mq(medium){
+                margin-top: 100px;
+                margin-bottom: 175px;
+            }
+            
+            img{
+                width: 100%;
+                
+                &::before{
+                    content: "Seulement 8$";
+                    margin: 0 auto;
+                    font-size: 1.25*$txtSize;
+                    font-weight: bold;
+
+                    @include mq(medium){
+                        content: " "
+                    }
+                }
+            }
+            div{
+                font-size: $txtSize;
+                
+                p:first-child{
+                    display: none;
+                    position: relative;
+
+                    .prix{
+                        font-size: 90px;
+                        padding-left: 10px;
+                        position: absolute;
+                        top: -15px;
+                    }
+                    
+                    @include mq(medium){
+                        display: block;
+                    }
+                }
+                p:last-child{
+                    margin-top: 50px;
+                    @include mq(medium){
+                        margin-top: 120px;
+                    }
+                }
+            }
+        }
+    }
+    footer{
+        padding-top: 20px;
+        padding-bottom: 20px;
+
+        @include mq(small){
+            padding-bottom: 50px;
+            padding-top: 50px;
+        }
+        background-color: $bleu;
+        position: relative;
+
+        *{
+            color: black;
+        }
+        .fleche::after{
+            content: "";
+            border: 15px solid transparent;
+            border-bottom: 15px solid black;
+            z-index: 99;
+            position: absolute;
+            right: 45px;
+            bottom: 110px;
+
+            @include mq(small){
+                bottom: inherit;
+                top: 50px;
+            }
+        }
+
+        .logo{
+            text-align: center;   
+            margin-bottom: 25px;
+            
+            img{
+                height: 150px;
+                
+                @include mq(small){
+                    height: 100px;
+                }
+                @include mq(medium){
+                    height: 150px;
+                }
+            }
+        }
+        #googleMap{
+            display: none;
+
+            @include mq(medium){
+                display: block;
+                width:250px;
+                height:150px;
+            }
+        }
+        .map>*{
+            text-align: center;
+            display: inline-block;
+            height: 150px;
+            width: 250px;
+            background-color: #666;
+        }
+        ul{
+
+            p{
+                font-size: 0.75*$txtSize;
+                margin-bottom: 0.5em;
+                
+                @include mq(small){
+                    padding-top: 0.5em;
+                    margin-bottom: 0em;
+                }
+            }
+            a{
+                font-size: $txtSize;
+                display: inline-block;
+                margin-top: 0.5em;
+            }
+        }
+        q{
+            margin-top: 30px;
+            display: block;
+            text-align: justify;
+            padding: 0 20px;
+
+            @include mq(small){
+                position: absolute;
+                bottom: 10px;
+                text-align: center;
+                left: 0;
+                right: 0;
+            }
+        }
+    }
+    
+}
