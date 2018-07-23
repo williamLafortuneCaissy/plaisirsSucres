@@ -41,10 +41,30 @@
                         <a href="index.html" class="col-md-2 logo"><img src="img/logo.svg" alt="Logo Cupcakes"></a>
                         <div class="col-md-10">
                             <ul class="row">
-                                <li class="col-md-3"><a href="cupcakes.html"><img src="img/cupcake.svg" alt="Cupcakes" class="ico"><p>Cupcakes</p></a></li>
-                                <li class="col-md-3"><a href="#"><img src="img/wedding-cake.svg" alt="Gâteaux" class="ico"><p>Gâteaux</p></a></li>
-                                <li class="col-md-3"><a href="#"><img src="img/croissant.svg" alt="Pâtisseries" class="ico-small"><p>Pâtisseries</p></a></li>
-                                <li class="col-md-3"><a href="#"><img src="img/chocolat.svg" alt="Chocolats fins" class="ico-small"><p>Chocolats  fins</p></a></li>
+                                <li class="col-md-3">
+                                	<a href="cupcakes.html">
+                                		<img src="img/cupcake.svg" alt="Cupcakes" class="ico">
+                                		<p>Cupcakes</p>
+                                	</a>
+                                </li>
+                                <li class="col-md-3">
+                                	<a class="desactive" href="#">
+                                		<img src="img/wedding-cake.svg" alt="Gâteaux" class="ico">
+                                		<p>Gâteaux</p>
+                                	</a>
+                                </li>
+                                <li class="col-md-3">
+                                	<a class="desactive" href="#">
+                                		<img src="img/croissant.svg" alt="Pâtisseries" class="ico-small">
+                                		<p>Pâtisseries</p>
+                                	</a>
+                            	</li>
+                                <li class="col-md-3">
+                                	<a class="desactive" href="#">
+                                		<img src="img/chocolat.svg" alt="Chocolats fins" class="ico-small">
+                                		<p>Chocolats  fins</p>
+                                	</a>
+                            	</li>
                             </ul>
                         </div>
                     </nav>
@@ -57,10 +77,10 @@
                 <h2 class="col-md-offset- col-md-2 sous-titre">Nos cours</h2>
                 <nav class="col-md-10">
                     <ul class="row">
-                        <li class="col-md-3"><a href="#">Confection de <span>macaron</span></a></li>
-                        <li class="col-md-3"><a href="#">Décoration de <span>gâteaux</span></a></li>
-                        <li class="col-md-3"><a href="#">Création de <span>pâtisserie</span></a></li>
-                        <li class="col-md-3"><a href="#">Création <span>Chocolaté</span></a></li>
+                        <li class="col-md-3"><a class="desactive" href="#">Confection de <span>macaron</span></a></li>
+                        <li class="col-md-3"><a class="desactive" href="#">Décoration de <span>gâteaux</span></a></li>
+                        <li class="col-md-3"><a class="desactive" href="#">Création de <span>pâtisserie</span></a></li>
+                        <li class="col-md-3"><a class="desactive" href="#">Création <span>Chocolaté</span></a></li>
                     </ul>
                 </nav>
             </div>
@@ -119,22 +139,24 @@
                 </li>
             </ul>
             <ul class="col-sm-4 col-md-4">
-                <li><a href="#">À propos</a></li>
-                <li><a href="#">Notre Équipe</a></li>
+                <li><a class="desactive" href="#">À propos</a></li>
+                <li><a class="desactive" href="#">Notre Équipe</a></li>
             </ul>
             <q>&#x24B8; 2017 - Techniques d'intégration multimédia. Réalisé à des fins pédagogiques dans le cadre du cours d'Assemblage des médias</q>
         </footer>
     </body>
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script>
         //burger
         $(function() {
-                    var burgerRef = ".burger";
+                    var burger = ".burger";
                     var maskRef = $('.nav-mask');
                     var maskedNavClassName = "is-masked";
-                    $(burgerRef).click(function() {
+                    document.getElementById("myCheck")
+                    $(burger).click(function() {
                         maskRef.toggleClass(maskedNavClassName);
                     });
-                }
+                });
     </script>
     <script>
         function myMap() {

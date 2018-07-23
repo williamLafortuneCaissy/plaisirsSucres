@@ -169,7 +169,6 @@ body{
                             }                        
                             p{
                                 font-size: $txtSize;
-                                color: black;
                                     
                                 @include mq(medium){
                                     padding-top: 0.5em;
@@ -235,7 +234,6 @@ body{
 
                             a{
                                 font-size: $txtSize;
-                                color: black;
 
                                 span{
                                     display: block;
@@ -432,10 +430,10 @@ body{
         text-align: center;
         background-color: $rosePale;
         
-        @include mq(small){
-            background-image: url(../img/titre_cupcake.jpg);
-            background-position: center;
-        }
+        
+        background-image: url(../img/titre_cupcake.jpg);
+        background-position: center;
+        
         h1{
             padding: 1em;
             margin-bottom: 200px;

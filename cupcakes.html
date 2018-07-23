@@ -20,6 +20,7 @@
         <!-- Optional theme -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
+        <script src="js/jquery-3.2.1.min.js"></script>
         <!-- Latest compiled and minified JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
@@ -46,9 +47,9 @@
                         <div class="col-md-10">
                             <ul class="row">
                                 <li class="col-md-3"><a href="cupcakes.html"><img src="img/cupcake_plein.svg" alt="Cupcakes" class="ico"><p>Cupcakes</p></a></li>
-                                <li class="col-md-3"><a href="#"><img src="img/wedding-cake.svg" alt="Gâteaux" class="ico"><p>Gâteaux</p></a></li>
-                                <li class="col-md-3"><a href="#"><img src="img/croissant.svg" alt="Pâtisseries" class="ico-small"><p>Pâtisseries</p></a></li>
-                                <li class="col-md-3"><a href="#"><img src="img/chocolat.svg" alt="Chocolats fins" class="ico-small"><p>Chocolats  fins</p></a></li>
+                                <li class="col-md-3"><a class="desactive" href="#"><img src="img/wedding-cake.svg" alt="Gâteaux" class="ico"><p>Gâteaux</p></a></li>
+                                <li class="col-md-3"><a class="desactive" href="#"><img src="img/croissant.svg" alt="Pâtisseries" class="ico-small"><p>Pâtisseries</p></a></li>
+                                <li class="col-md-3"><a class="desactive" href="#"><img src="img/chocolat.svg" alt="Chocolats fins" class="ico-small"><p>Chocolats  fins</p></a></li>
                             </ul>
                         </div>
                     </nav>
@@ -61,10 +62,10 @@
                 <h2 class="col-md-offset- col-md-2 sous-titre">Nos cours</h2>
                 <nav class="col-md-10">
                     <ul class="row">
-                        <li class="col-md-3"><a href="#">Confection de <span>macaron</span></a></li>
-                        <li class="col-md-3"><a href="#">Décoration de <span>gâteaux</span></a></li>
-                        <li class="col-md-3"><a href="#">Création de <span>pâtisserie</span></a></li>
-                        <li class="col-md-3"><a href="#">Création <span>Chocolaté</span></a></li>
+                        <li class="col-md-3"><a class="desactive" href="#">Confection de <span>macaron</span></a></li>
+                        <li class="col-md-3"><a class="desactive" href="#">Décoration de <span>gâteaux</span></a></li>
+                        <li class="col-md-3"><a class="desactive" href="#">Création de <span>pâtisserie</span></a></li>
+                        <li class="col-md-3"><a class="desactive" href="#">Création <span>Chocolaté</span></a></li>
                     </ul>
                 </nav>
             </div>
@@ -79,11 +80,11 @@
             <nav class="col-md-offset-1 col-md-4">
                 <ul>
                     <li><a href="choco-noisette.html">Choco-noisette</a></li>
-                    <li><a href="#">Déluge de chocolat</a></li>
-                    <li><a href="#">Framboise</a></li>
-                    <li><a href="#">Caramel à la fleur de sel</a></li>
-                    <li><a href="#">Fraise</a></li>
-                    <li><a href="#">Redvelvet</a></li>
+                    <li><a class="desactive" href="#">Déluge de chocolat</a></li>
+                    <li><a class="desactive" href="#">Framboise</a></li>
+                    <li><a class="desactive" href="#">Caramel à la fleur de sel</a></li>
+                    <li><a class="desactive" href="#">Fraise</a></li>
+                    <li><a class="desactive" href="#">Redvelvet</a></li>
                 </ul>
             </nav>
             <h2 class="col-md-offset-1 col-md-6 sous-titre">Cupcakes</h2>
@@ -97,7 +98,7 @@
                     </a>
                 </div>
                 <div class="col-xs-offset-1 col-xs-10 col-sm-4 col-md-offset-2 col-md-3 unCupcake">
-                    <a href="#">
+                    <a class="desactive" href="#">
                         <img src="img/deluge_chocolat.jpg" alt="Déluge de chocolat">
                         <p>Déluge de chocolat</p>
                     </a>
@@ -105,13 +106,13 @@
             </div>
             <div class="row">
                 <div class="col-xs-offset-1 col-xs-10 col-sm-offset-2 col-sm-4 col-md-offset-2 col-md-3 unCupcake">
-                    <a href="#">
+                    <a class="desactive" href="#">
                         <img src="img/framboise.jpg" alt="Framboise">
                         <p>Framboise</p>
                     </a>
                 </div>
                 <div class="col-xs-offset-1 col-xs-10 col-sm-4 col-md-offset-2 col-md-3 unCupcake">
-                    <a href="#">
+                    <a class="desactive" href="#">
                         <img src="img/caramel.jpg" alt="Caramel à la fleur de sel">
                         <p>Caramel à la<br/>fleur de sel</p>
                     </a>
@@ -119,13 +120,13 @@
             </div>
             <div class="row">
                 <div class="col-xs-offset-1 col-xs-10 col-sm-offset-2 col-sm-4 col-md-offset-2 col-md-3 unCupcake">
-                    <a href="#">
+                    <a class="desactive" href="#">
                         <img src="img/fraise.jpg" alt="Fraise">
                         <p>Fraise</p>
                     </a>
                 </div>
                 <div class="col-xs-offset-1 col-xs-10 col-sm-4 col-md-offset-2 col-md-3 unCupcake">
-                    <a href="#">
+                    <a class="desactive" href="#">
                         <img src="img/velvet.jpg" alt="Redvelvet">
                         <p>Redvelvet</p>
                     </a>
@@ -149,22 +150,24 @@
                 </li>
             </ul>
             <ul class="col-sm-4 col-md-4">
-                <li><a href="#">À propos</a></li>
-                <li><a href="#">Notre Équipe</a></li>
+                <li><a class="desactive" href="#">À propos</a></li>
+                <li><a class="desactive" href="#">Notre Équipe</a></li>
             </ul>
             <q>&#x24B8; 2017 - Techniques d'intégration multimédia. Réalisé à des fins pédagogiques dans le cadre du cours d'Assemblage des médias</q>
         </footer>
     </body>
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script>
         //burger
         $(function() {
-                    var burgerRef = ".burger";
+                    var burger = ".burger";
                     var maskRef = $('.nav-mask');
                     var maskedNavClassName = "is-masked";
-                    $(burgerRef).click(function() {
+                    document.getElementById("myCheck")
+                    $(burger).click(function() {
                         maskRef.toggleClass(maskedNavClassName);
                     });
-                }
+                });
     </script>
     <script>
         function myMap() {

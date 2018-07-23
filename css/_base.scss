@@ -7,6 +7,16 @@
     color: black;
 }
 
+.desactive:hover{
+	text-decoration: none;
+}
+
+
+a, a:hover{
+	color: black;
+}
+
+
 //body{
 //    @include mq(large){
 //        color:red;
